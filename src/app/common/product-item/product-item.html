@@ -1,0 +1,16 @@
+<div class="card shadow-sm"> 
+    <div class="card-body">
+        <img src="{{item.image}}" width="200px" height="200px">
+        <h5 class="card-text">{{item.description}}</h5>
+        <p> itemCode: {{item.itemCode}}</p>
+        <p> packSize: {{item.packSize}}</p>
+        <p> qtyOnHand: {{item.qtyOnHand}}</p>
+        <p> unitPrice: {{item.unitPrice}}</p>
+        <div class="d-flex justify-content-between align-items-center">
+            <div class="btn-group"> <button (click)="addToCart()" type="button" class="btn btn-primary">Add to Cart</button>  </div> <small
+                class="text-body-secondary">9 mins</small>
+        </div>
+    </div>
+</div>
+
+

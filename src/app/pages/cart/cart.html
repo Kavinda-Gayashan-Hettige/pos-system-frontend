@@ -1,0 +1,28 @@
+<p>My Cart</p>
+<div class="card shadow-sm">
+    <div class="card-body">
+        <div class="col mb-4" *ngFor="let item of CartItems">
+            <img src="{{item.image}}" width="200px" height="200px">
+            <h5 class="card-text">{{item.description}}</h5>
+            <p> itemCode: {{item.itemCode}}</p>
+            <p> packSize: {{item.packSize}}</p>
+            <p> Available Stock: <span class="badge bg-success">{{item.qtyOnHand}}</span></p>
+            <p> unitPrice: {{item.unitPrice}}</p>
+
+            <div class="mb-3" style="max-width: 150px;">
+                <label class="form-label">Order Qty:</label>
+                <input type="number" class="form-control" [(ngModel)]="item.orderQty" min="1" [max]="item.qtyOnHand">
+            </div>
+
+            <div class="d-flex justify-content-between align-items-center">
+                <div class="btn-group">
+                    <button (click)="placeOrder(item)" type="button" class="btn btn-sm btn-outline-primary">Place
+                        Order</button>
+                    <button (click)="deleteOrder(item)" type="button" class="btn btn-sm btn-outline-danger">Delete
+                        Order</button>
+                </div>
+            </div>
+            <hr>
+        </div>
+    </div>
+</div>
